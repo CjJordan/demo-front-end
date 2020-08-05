@@ -1,0 +1,46 @@
+.container{
+	width: 80%;
+	margin: 20px auto;
+}
+
+.mat-expansion-panel-header-title{
+	width: 30%;
+}
+
+mat-panel-title {
+	    color: rgba(0,0,0,.87);
+	    font-size: 12px;
+	    font-weight: 400;
+	    text-transform: uppercase;
+}
+
+label {
+	margin-left: 10px;
+	color: rgba(0,0,0,.54);
+	font-size: 12px;
+	font-weight: 200;
+	position: relative;
+	bottom: 2px;
+}
+
+.mat-expansion-panel-header-description {
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-button{
+	background: #d1c3e8;
+	color: white;
+	width: 1em;
+	height: 1em;
+	line-height: 1em;
+	text-align: center;
+	border: 1px solid #d1c3e8;
+	border-radius: 50%;
+	cursor: pointer;
+	float: right;
+}
+
+.task-input{
+	font-size: .8em;
+}

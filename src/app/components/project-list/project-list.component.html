@@ -1,0 +1,31 @@
+<div class="container">
+	<mat-accordion>
+	  <mat-expansion-panel *ngFor="let project of projService.projectList; trackBy: trackByFn">
+	    <mat-expansion-panel-header>
+	      <mat-panel-title>
+	        {{project.projectName}}
+	      </mat-panel-title>
+	      <mat-panel-description>
+	        <mat-progress-bar mode="determinate" value="{{project.completionCount/project.taskList.length * 100}}"></mat-progress-bar>
+	      </mat-panel-description>
+	    </mat-expansion-panel-header>
+
+
+		  <mat-form-field class="task-input">
+		    <input matInput placeholder="New Task" [(ngModel)]="value" (keyup.enter)="projService.addTask(value, project.id)" (keyup.enter)="value=''" >
+		  </mat-form-field>
+
+	    <div *ngFor="let task of project.taskList; trackBy: trackByFn">
+	    	<input type="checkbox" (click)="projService.toggleTaskStatus(task)" [checked]="task.isComplete"/>
+	    	<label>{{task.taskName}}</label>
+	    	<div class="delete-button" (click)="projService.deleteTask(task)">x</div>
+	    </div>
+	  </mat-expansion-panel>
+	</mat-accordion>
+</div>
+
+
+
+
+
+
